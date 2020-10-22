@@ -7,7 +7,7 @@ using namespace std;
 int main() {
 	int num = 2, count = 0, flag = 0, ans;
 	while (count < 10001) {
-		for (int i = 2; i <= num / 2; i++) {
+		for (int i = 2; i <= sqrt(num); i++) {
 			if (num % i == 0)
 				flag++;
 		}

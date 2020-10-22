@@ -3,21 +3,25 @@
 // Output-142913828922
 #include<iostream>
 using namespace std;
-
-int main() {
-	int flag=0;
-	long long num = 2,sum=0;
-	while (num <= 2000000) {
-		for (int i = 2; i <= sqrt(num); i++) {
-			if (num % i == 0) {
-				flag++;
-			}
-		}
-		if (flag == 0) {
-			sum += num;
-		}
-		num++;
-		flag=0;
-	}
-	cout << sum;
+int main()
+{
+    unsigned long long int i, j, t = 0, sum = 5;
+    int flag = 0;
+    i = 5;
+    while (i < 2000000)
+    {
+        t = (int)sqrt(i);
+        for (j = 3; j <= t; j = j + 2)
+        {
+            if (i % j == 0) {
+                flag = 1;
+                break;
+            }
+        }
+        if (!flag)
+            sum += i;
+        flag = 0; i += 2;
+    }
+    cout << sum;
+    return 0;
 }
